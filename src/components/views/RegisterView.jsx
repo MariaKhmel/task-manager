@@ -1,12 +1,15 @@
 import { useState } from "react";
+import authOpertions from "../redux/authOperations";
+import { useDispatch } from "react-redux";
 
 const RegisterView = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(authOpertions.register({ name, email, password }));
     setEmail("");
     setPassword("");
     setName("");

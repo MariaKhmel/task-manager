@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import authOperations from "../redux/authOperations";
 
 const LoginView = () => {
   const dispatch = useDispatch();
@@ -8,7 +9,7 @@ const LoginView = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // dispatch(authOperations.logIn({ email, password }));
+    dispatch(authOperations.logIn({ email, password }));
     setEmail("");
     setPassword("");
   };
@@ -54,3 +55,13 @@ const LoginView = () => {
 };
 
 export default LoginView;
+
+// email
+// :
+// "gfdsfgfds@mail.com"
+// name
+// :
+// "kjhgfdghgf"
+// password
+// :
+// "fff444tssz54454"
